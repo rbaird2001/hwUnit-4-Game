@@ -15,16 +15,16 @@
         <section class="container" id="gameBoard">
             <div class="row" id="rowChar">
                 <div class="col-sm-2">
-                    <img src="https://via.placeholder.com/200" alt="" class="img-fluid playChar">
+                    <img id="imgChar1" src="https://via.placeholder.com/200" alt="" class="img-fluid imgChar">
                 </div>
                 <div class="col-sm-2">
-                    <img src="https://via.placeholder.com/200" alt="" class="img-fluid playChar">
+                    <img id="imgChar2" src="https://via.placeholder.com/200" alt="" class="img-fluid imgChar">
                 </div>
                 <div class="col-sm-2">
-                    <img src="https://via.placeholder.com/200" alt="" class="img-fluid playChar">
+                    <img id="imgChar3" src="https://via.placeholder.com/200" alt="" class="img-fluid imgChar">
                 </div>
                 <div class="col-sm-2">
-                    <img src="https://via.placeholder.com/200" alt="" class="img-fluid playChar">
+                    <img id="imgChar4" src="https://via.placeholder.com/200" alt="" class="img-fluid imgChar">
                 </div>
             </div>
             <br>
@@ -34,8 +34,8 @@
                 </div>
             </div>
             <div class="row" id="rowSelChar">
-                <div class="col-sm-2" id="colSelChar">
-                    <img src="https://via.placeholder.com/200" alt="your character" class="img-fluid visible" id="imgSelChar">
+                <div class="col-sm-3 border border-primary" id="colSelChar">
+                    <img src="https://via.placeholder.com/200" alt="your character" class="img-fluid invisible" id="imgSelChar">
                 </div>
             </div>
             <br>
@@ -46,14 +46,19 @@
             </div>
             <br>
             <div class="row" id="rowSelOpp">
-                <div class="col-sm-2" id="colSelOpp">
-                    <img src="https://via.placeholder.com/200" alt="your character" class="img-fluid visible" id="imgSelChar">
+                <div class="col-sm-3 border border-danger" id="colSelOpp">
+                    <img src="https://via.placeholder.com/200" alt="your character" class="img-fluid invisible" id="imgSelOpp">
                 </div>
             </div>
             <br><br>
         </section>
 
     </section>
+    <script
+    src="http://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+    </script>
     <script 
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>

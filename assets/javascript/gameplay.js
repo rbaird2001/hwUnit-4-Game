@@ -14,16 +14,16 @@ var objGame = {
     selectOponnentChar: function () {
         this.setupCharDD(this.eleImgChar, this.eleOppChar);
     },
-    setupChars: function (parDrag,parDrop) {
+    setupChars: function (parDrag, parDrop) {
         // var dropChar = this.arrDropChar[0]
-        if(parDrop === "imgSelChar"){
+        if (parDrop === "imgSelChar") {
             this.setupOpps(parDrag);
         }
         //TODO: Ensure no other chars can be put into selected car by disabling #imgSelChar ability
         //TODO: randomize power of remaining chars.
         //TODO: add power from charPower.Char0 to selected char
-        this.intSelCharPower = this.objCharPower.objChar0.power
-        this.intSelCharLife = this.objCharPower.objChar0.life
+        this.intSelCharPower = this.arrCharsPower[0].power
+        this.intSelCharLife = this.arrCharsPower[0].life
         //TODO: Enable dropping to imgSelOpp
     },
     setupCharDD: function (eleDrag, eleDrop) {
@@ -37,7 +37,7 @@ var objGame = {
                 let drop = $(event.target).attr("id");
                 self.arrDropChar.push(drag);
                 self.arrDropChar.push(drop);
-                self.setupChars(drag,drop);
+                self.setupChars(drag, drop);
             }
         });
     },
@@ -46,11 +46,13 @@ var objGame = {
         for (i = 0; i < imgChars.length; i++) {
             let imgCharID = $(imgChars[i]).attr("id");
             if (imgCharID != parDrag) {
-                this.arrOppChars.push(imgCharID);            
+                this.arrOppChars.push(imgCharID);
             }
         }
         //Randomize arrOppChars array so opponents don't have same power/life each time
         this.randomizeArray(this.arrOppChars);
+        //assign oppenents their power
+        this.powerOpps(this.arrOppChars);
     },
     /**
      * Randomize array element order in-place.
@@ -59,32 +61,33 @@ var objGame = {
      *   of the Fisher-Yates algorithm.
      * https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
      */
-    randomizeArray : function (array) {
-       for (var i = array.length - 1; i > 0; i--) {
-           var j = Math.floor(Math.random() * (i + 1));
-           var temp = array[i];
-           array[i] = array[j];
-           array[j] = temp;
-       }
-   },
-    objCharPower: {
-        objChar0: {
-            power: 100,
-            life: 200,
-        },
-        objChar1: {
-            power: 150,
-            life: 150
-        },
-        objChar2: {
-            power: 200,
-            life: 200
-        },
-        objChar3: {
-            power: 250,
-            life: 250
-        },
+    randomizeArray: function (array) {
+        for (i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
     },
+    /**
+     * Take randomized opponent array and combine
+     *    with character powers array and create new
+     *    object assigning each character to its power
+     */
+    powerOpps: function (array) {
+        this.objOppPower = {};
+        for (i = 0; i < array.length; i++) {
+            let j = i+1
+            this.objOppPower[array[i]] = this.arrCharsPower[j];
+        }
+    },
+    objOppPower:{},
+    arrCharsPower: [{power: 100,life: 200,},
+    {power: 150,life: 150},
+    {power: 200,life: 200},
+    {power: 250,life: 250}
+    ],
+
 }
 objGame.selectImgChar();
 //objGame.selectOponnentChar();

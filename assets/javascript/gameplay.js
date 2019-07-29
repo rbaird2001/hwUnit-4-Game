@@ -18,6 +18,7 @@ var objGame = {
     oppPlayLife : 0,
     oppPlayPower :0,
     playCount : 0,
+    winCount: 0,
     turtles: "i like turtles",
     setupPlayChars: function () {
         self = (this);
@@ -127,11 +128,16 @@ var objGame = {
             this.oppPlayLife -= this.intSelCharPower;
             this.selPlayLife -= this.intOppCharPower;
         if (this.oppPlayLife <= 0) {
+            this.winCount ++
             alert("victorious");
+            this.oppPlayLife += this.intOppCharLife
+            removeOpp = "#" + this.strSelOpp
+            $(removeOpp).attr("disabled","true");
         }
         else if (this.selPlayLife <= 0) {
             alert("defeat");
             this.newOpp();
+            if(this.playCount > 0)
             this.selPlayLife = this.intSelCharLife;
             this.selPlayPower = this.intSelCharPower;
         }

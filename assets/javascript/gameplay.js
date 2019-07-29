@@ -132,7 +132,8 @@ var objGame = {
             alert("victorious");
             this.oppPlayLife += this.intOppCharLife
             removeOpp = "#" + this.strSelOpp
-            $(removeOpp).attr("disabled","true");
+            remOppClass = $(removeOpp).attr("class") + " d-none";
+            $(removeOpp).attr("class",remOppClass);
         }
         else if (this.selPlayLife <= 0) {
             alert("defeat");

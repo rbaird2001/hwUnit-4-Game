@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <title>Star Wars Game</title>
+</head>
+
+<body>
+    <section class="container">
+
+        <section class="container" id="gameBoard">
+            <div class="m-3"></div>
+            <div class="row" id="rowChar">
+                <div class="col-sm-2">
+                    <img id="imgChar1" src="assets/images/starwars-bb-8.png"  class="img-fluid imgChar">
+                </div>
+                <div class="col-sm-2">
+                    <img id="imgChar2" src="assets/images/starwars-boba-fett.png" alt="" class="img-fluid imgChar">
+                </div>
+                <div class="col-sm-2">
+                    <img id="imgChar3" src="assets/images/starwars-r2-d2.png" alt="" class="img-fluid imgChar">
+                </div>
+                <div class="col-sm-2">
+                    <img id="imgChar4" src="assets/images/starwars-darth-vader.png" alt="" class="img-fluid imgChar">
+                </div>
+            </div>
+            <br>
+            <div class="row" id="rowHeadYour">
+                <div class="col-sm-4" id="colHeadYour">
+                    <h3>Your Character</h3>
+                </div>
+            </div>
+            <div class="row" id="rowSelChar">
+                <div class="col-sm-3 border border-primary imgHolder" id="imgSelChar">
+                    <!-- <img src="https://via.placeholder.com/200" alt="your character" class="img-fluid invisible border border-primary"> -->
+                </div>
+                <div class="col-sm-2" id="badge1">
+                    <button id="selPower" type="button" class="btn btn-primary">
+                        Power <span class="badge badge-light">4</span>
+                    </button>
+                    <p></p>
+                    <button id="selLife" type="button" class="btn btn-primary">
+                        Life <span class="badge badge-light">4</span>
+                    </button>
+                </div>
+            </div>
+            <br>
+            <div class="row" id="rowAtt">
+                <div class="col-sm-2" id="colAtt">
+                    <button id="btnAtt">Attack</button>
+                </div>
+            </div>
+            <br>
+            <div class="row" id="rowSelOpp">
+                <div class="col-sm-3 border border-danger imgHolder" id="imgSelOpp">
+                </div>
+                <div class="col-sm-2" id="badge2">
+                    <button id="oppPower" type="button" class="btn btn-danger">Power
+                        <span class="badge badge-light">4</span>
+                    </button>
+                    <p></p>
+                    <button id="oppLife" type="button" class="btn btn-danger">Life
+                        <span class="badge badge-light">4</span>
+                    </button>
+                </div>
+            </div>
+            <br><br>
+        </section>
+
+    </section>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous">
+        </script>
+
+    <script src="assets/javascript/gameplay.js">
+    </script>
+</body>
+
+</html>

@@ -68,7 +68,7 @@ var objGame = {
             this.intOppCharPower = this.objOppPower[parDrag].power;
             this.intOppCharLife = this.objOppPower[parDrag].life;
             //this.setupBtnNewOpp();
-            this.initPowerDisplay;
+            this.initPowerDisplay();
             this.setupAttack();
         }
         //TODO: Ensure no other chars can be put into selected car by disabling #imgSelChar ability
@@ -130,8 +130,11 @@ var objGame = {
         if (this.oppPlayLife <= 0) {
             this.winCount ++
             alert("victorious");
-            this.oppPlayLife += this.intOppCharLife
-            removeOpp = "#" + this.strSelOpp
+            this.intSelCharLife += 35;
+            this.intSelCharPower += 25;
+            this.selPlayLife = this.intSelCharLife;
+            this.selPlayPower = this.intSelCharPower
+            removeOpp = "#" + this.strSelOpp;
             remOppClass = $(removeOpp).attr("class") + " d-none";
             $(removeOpp).attr("class",remOppClass);
         }
@@ -144,16 +147,13 @@ var objGame = {
         }
     },
 
-    // setupBtnNewOpp: function(){
-    //     $("#btnNewOpp").click(this.newOpp.bind(this));
-    // },
-
     /** Turns out drag/drop from JQueryUI doesn't have 
      *      a return to original position feature after 
-     *      a successful drop. This resets position based
+     *      a successful drop. 
+     * 
+     * This resets position based
      *      on original position settings stored at initialize.
     * */
-
     newOpp: function (){
         jqSelOpp = "#" + this.strSelOpp
         $(jqSelOpp).css({
@@ -176,23 +176,4 @@ var objGame = {
 }
 
 objGame.setupPlayChars();
-//objGame.selectImgChar();
-// objGame.selectOpponentChar();
-// objGame.setupResetButton();
-
-
-// $( "#droppable" ).droppable({
-//     drop: function( event, ui ) {
-//       $( this )
-//         .addClass( "ui-state-highlight" )
-//         .find( "p" )
-//           .html( "Dropped!" );
-
-// var simpleObj = {
-//     a: 'a',
-//     b: 'b',
-//     get ab() {
-//         return this.a + this.b;
-//     }
-// }
 

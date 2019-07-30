@@ -1,0 +1,9 @@
+
+.imgHolder{
+    height: 200px;
+    width: 200px;
+}
+#gameBoard{
+    /* background-image: url(../images/gameboardBG.jpeg); */
+    background-size: contain;
+}

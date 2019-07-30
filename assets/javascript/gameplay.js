@@ -62,12 +62,16 @@ var objGame = {
             this.intSelCharPower = this.arrCharsPower[0].power
             this.intSelCharLife = this.arrCharsPower[0].life
             this.setupDrop(this.eleOppChar);
+            $("#selPower").text(this.intSelCharPower);
+            $("#selLife").text(this.intSelCharLife)
         }
         else {
             this.strSelOpp = parDrag;
             this.intOppCharPower = this.objOppPower[parDrag].power;
             this.intOppCharLife = this.objOppPower[parDrag].life;
             //this.setupBtnNewOpp();
+            $("#oppPower").text(this.intOppCharPower);
+            $("#oppLife").text(this.intOppCharLife);
             this.initPowerDisplay();
             this.setupAttack();
         }
@@ -135,8 +139,10 @@ var objGame = {
             this.selPlayLife = this.intSelCharLife;
             this.selPlayPower = this.intSelCharPower
             removeOpp = "#" + this.strSelOpp;
-            remOppClass = $(removeOpp).attr("class") + " d-none";
+            let remOppClass = $(removeOpp).attr("class") + " d-none";
             $(removeOpp).attr("class",remOppClass);
+            $("#selPower").text(this.intSelCharPower);
+            $("#selLife").text(this.intSelCharLife);
         }
         else if (this.selPlayLife <= 0) {
             alert("defeat");

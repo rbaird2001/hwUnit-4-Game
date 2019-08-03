@@ -21,7 +21,7 @@
             <div class="m-3"></div>
             <div class="row" id="rowChar">
                 <div class="col-sm-2">
-                    <img id="imgChar1" src="assets/images/starwars-bb-8.png"  class="img-fluid imgChar">
+                    <img id="imgChar1" src="assets/images/starwars-bb-8.png" class="img-fluid imgChar">
                 </div>
                 <div class="col-sm-2">
                     <img id="imgChar2" src="assets/images/starwars-boba-fett.png" alt="" class="img-fluid imgChar">
@@ -43,11 +43,10 @@
                 <div class="col-sm-3 border border-primary imgHolder" id="imgSelChar">
                     <!-- <img src="https://via.placeholder.com/200" alt="your character" class="img-fluid invisible border border-primary"> -->
                 </div>
-                <div class="col-sm-2" id="badge1">
+                <div class="col-sm" id="badge1">
                     <button id="selPower" type="button" class="btn btn-primary">
                         Power <span class="badge badge-light">0</span>
                     </button>
-                    <p></p>
                     <button id="selLife" type="button" class="btn btn-primary">
                         Life <span class="badge badge-light">0</span>
                     </button>
@@ -63,19 +62,44 @@
             <div class="row" id="rowSelOpp">
                 <div class="col-sm-3 border border-danger imgHolder" id="imgSelOpp">
                 </div>
-                <div class="col-sm-2" id="badge2">
+                <div class="col-sm" id="badge2">
                     <button id="oppPower" type="button" class="btn btn-danger">Power
                         <span class="badge badge-light">0</span>
                     </button>
-                    <p></p>
                     <button id="oppLife" type="button" class="btn btn-danger">Life
                         <span class="badge badge-light">0</span>
                     </button>
                 </div>
             </div>
             <br><br>
-        </section>
 
+            <!-- Modal -->
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div id="battleOutcome" class="modal-content text-light">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-light" id="battleOutcomeTitle">Modal title</h5>
+                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button> -->
+                        </div>
+                        <div id="battleOutcomeDetail" class="modal-body bg-light text-dark">
+                        </div>
+                        <div class="modal-footer">
+                            <button id="closeButton" type="button" class="btn btn-secondary" data-dismiss="modal">Return to Battle</button>
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">

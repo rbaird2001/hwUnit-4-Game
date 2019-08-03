@@ -1,9 +1,18 @@
 
 .imgHolder{
-    height: 200px;
+    height: 125px;
     width: 200px;
 }
 #gameBoard{
     /* background-image: url(../images/gameboardBG.jpeg); */
     background-size: contain;
+}
+
+#battleOutcome{
+    background-image: url(../images/crossSabers.jpg);
+    background-size: cover;
+}
+
+#battleOutcomeDetail{
+    opacity: .25;
 }
